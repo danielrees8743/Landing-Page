@@ -1,0 +1,132 @@
+.nav__items {
+  width: fit-content;
+  font-size: 1rem;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.nav-item:link,
+.nav-item:visited {
+  color: var(--font-color);
+  font-size: 1rem;
+  text-decoration: none;
+  margin: 0 1rem;
+  padding: 0.3rem;
+}
+.nav-item:hover,
+.nav-item:active {
+  text-decoration: none;
+  background-color: #5a6c62;
+  border-radius: 0.3rem;
+  box-shadow: var(--box-shadow);
+}
+.logo {
+  width: 8rem;
+}
+.heading-logo {
+  width: 100%;
+}
+button {
+  color: #090909;
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5em;
+  background: var(--background);
+}
+button:hover,
+button:active {
+  color: var(--color);
+  background-color: #5a6c62;
+  box-shadow: var(--box-shadow);
+}
+.sticky {
+  position: sticky;
+  top: 0;
+  background-color: rgba(132, 132, 132, 0.38);
+}
+.active {
+  background-color: #5a6c62;
+}
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 100%;
+}
+.panel {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90%;
+
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 1rem;
+  /* position: relative; */
+  transition: flex 0.7s ease-in;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.panel h3 {
+  font-size: 1.5rem;
+  /* position: absolute; */
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: 0px;
+  opacity: 0;
+  /* color: #fff; */
+}
+.panel.active {
+  flex: 3;
+}
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact-form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #090909;
+}
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  height: 200px;
+}
+.contact-form button {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #090909;
+  background-color: #5a6c62;
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    width: 100%;
+  }
+  .panel:nth-of-type(5),
+  .panel:nth-of-type(6) {
+    display: none;
+  }
+}
