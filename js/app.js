@@ -1,8 +1,9 @@
 //? Query Selectors
 //? Global Variables
 const header = document.getElementById('header');
-const sections = document.querySelectorAll('section');
-const navigation = document.querySelectorAll('.nav');
+const sections = document.querySelectorAll('section'); //? Get all sections
+const navigation = document.querySelectorAll('.nav'); //? Get the navigation menu
+const headings = document.querySelectorAll('.heading-secondary');
 
 let navMenu;
 const panels = document.querySelectorAll('.panel');
@@ -38,7 +39,15 @@ document.addEventListener('DOMContentLoaded', (e) => {
   navigation.forEach((item) => {
     item.insertAdjacentHTML('beforeend', createNavigation());
   });
+  const navUl = document.querySelector('.nav__items');
   navMenu = document.querySelectorAll('.nav-item');
+  const liItem = document.createElement('li');
+  const anchor = document.createElement('a');
+  anchor.href = '#contact';
+  anchor.classList.add('nav-item');
+  anchor.innerHTML = 'Subscribe';
+  liItem.append(anchor);
+  navUl.appendChild(liItem);
 });
 
 //? Smooth Scrolling into sections
@@ -62,7 +71,7 @@ window.onscroll = () => {
     header.classList.remove('sticky');
   }
 };
-
+//? Adds active class to the panels to the hero section
 panels.forEach((panel) => {
   panel.addEventListener('click', () => {
     removeActiveClasses(panels);
@@ -74,14 +83,18 @@ panels.forEach((panel) => {
 function makeActive(e) {
   sections.forEach((section) => {
     const position = section.getBoundingClientRect();
-
+    // console.log(position, section);
+    const sectionId = section.getAttribute('id');
     if (position.top <= 150 && position.bottom >= 150) {
-      document.querySelector(`[href='#${section.id}']`).classList.add('active');
-      document.querySelectorAll('h2').classList.add('active');
+      document.querySelector(`[href='#${sectionId}']`).classList.add('active');
+      console.log(section);
     } else {
       document
-        .querySelector(`[href='#${section.id}']`)
+        .querySelector(`[href='#${sectionId}']`)
         .classList.remove('active');
+      // document
+      //   .querySelectorAll('.header-secondary')
+      //   .classList.remove('selected');
     }
   });
 }

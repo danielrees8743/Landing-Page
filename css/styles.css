@@ -62,13 +62,14 @@ body {
 .main {
   grid-area: main;
   border: 1px solid black;
-  padding-top: 5rem;
+}
+#team {
 }
 
 .footer {
   grid-area: footer;
   border: var(--border);
-  height: 10rem;
+  height: 20rem;
 }
 /* fix Temporary Style */
 p {
